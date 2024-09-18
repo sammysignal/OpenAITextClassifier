@@ -1,4 +1,4 @@
-# Classification
+# Text Classification using OpenAI Embeddings
 
 This project is a simple text classification system that uses OpenAI's embedding model to classify
 text into however many categories you want, using a simple k-nearest neighbors algorithm.
@@ -14,3 +14,19 @@ To use the classification system, you need to have an OpenAI API key. You can ge
 
 See `test.py` for an example of how to use the classification system.
 
+### test.py shows perfect accuracy for 5 test examples
+0
+0
+0
+0
+0
+1
+1
+1
+1
+1
+2
+2
+2
+2
+2
