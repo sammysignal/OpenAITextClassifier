@@ -59,15 +59,19 @@ EXAMPLE_DATA = [
     {"text": "Ancient legends speak of gods descending from the stars, now thought to be early encounters with aliens.", "label": 2},
 ]
 
+embeddings = None
+classifier = None
 # # If previous embeddings exist, load them
-# embeddings = load_embeddings()
-# classifier = OpenAIClassifier(EXAMPLE_DATA, saved_mean_embeddings=embeddings)
+if os.path.exists("mean_embeddings.pkl"):
+    embeddings = load_embeddings()
+    classifier = OpenAIClassifier(EXAMPLE_DATA, saved_mean_embeddings=embeddings)
 
 # Otherwise, create new embeddings
-classifier = OpenAIClassifier(EXAMPLE_DATA)
-print("done creating embeddings")
-# Save the embeddings
-classifier.save_embeddings()
+else:
+    classifier = OpenAIClassifier(EXAMPLE_DATA)
+    print("done creating embeddings")
+    # Save the embeddings
+    classifier.save_embeddings()
 
 # Test Positive
 print(classifier.classify("The celebration was filled with laughter and joy, bringing everyone together in happiness."))
