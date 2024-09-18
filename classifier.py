@@ -46,13 +46,11 @@ class OpenAIClassifier:
         self.label_count = label_count
         self.mean_embeddings = mean_embeddings
 
-
-    # Distance between two vector embeddings.
+    # Euclidean distance between two vector embeddings.
     def _d(self, a: list[float], b: list[float]) -> float:
         if len(a) != len(b):
-            print(len(a), len(b))
             raise ValueError("Vectors must be of the same length")
-        return sum([a[i] * b[i] for i in range(len(a))])
+        return math.sqrt(sum([(a[i] - b[i]) ** 2 for i in range(len(a))]))
 
     # Embed a text using OpenAI's embedding model
     def _embed(self, text: str) -> list[float]:

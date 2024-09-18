@@ -1,3 +1,5 @@
+import os
+
 from classifier import OpenAIClassifier, load_embeddings
 
 # Example data for sentiment analysis
@@ -73,19 +75,19 @@ else:
     # Save the embeddings
     classifier.save_embeddings()
 
-# Test Positive
-print(classifier.classify("The celebration was filled with laughter and joy, bringing everyone together in happiness."))
-print(classifier.classify("Each day seems to be getting better, filled with unexpected delights and smiles."))
-print(classifier.classify("The team’s hard work paid off, and the atmosphere is electric with excitement."))
-print(classifier.classify("Friends gathered around, sharing stories and creating memories that would last a lifetime."))
-print(classifier.classify("The sunrise painted the sky in vibrant colors, filling the morning with a sense of peace and hope."))
-
 # Test Negative
 print(classifier.classify("The news left everyone in the room silent, a heavy cloud of sadness hanging over them."))
 print(classifier.classify("Despite all the efforts, the project fell apart, leaving a sense of defeat in its wake."))
 print(classifier.classify("The emptiness in the house was palpable after they left, each room echoing with the memories of happier times."))
 print(classifier.classify("The storm destroyed everything they had worked so hard to build, leaving nothing but ruins."))
 print(classifier.classify("Every attempt to make things right seemed to push them further into a cycle of despair."))
+
+# Test Positive
+print(classifier.classify("The celebration was filled with laughter and joy, bringing everyone together in happiness."))
+print(classifier.classify("Each day seems to be getting better, filled with unexpected delights and smiles."))
+print(classifier.classify("The team’s hard work paid off, and the atmosphere is electric with excitement."))
+print(classifier.classify("Friends gathered around, sharing stories and creating memories that would last a lifetime."))
+print(classifier.classify("The sunrise painted the sky in vibrant colors, filling the morning with a sense of peace and hope."))
 
 # Test Aliens
 print(classifier.classify("The first contact with the alien beings revealed a language composed of light patterns and colors."))
