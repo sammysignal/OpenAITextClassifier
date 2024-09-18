@@ -95,6 +95,3 @@ print(classifier.classify("Astronomers were stunned when they discovered a new p
 print(classifier.classify("The alien ambassador extended a hand of friendship, its form both fascinating and otherworldly."))
 print(classifier.classify("Stories of alien abductions have sparked fear and curiosity in small towns around the world."))
 print(classifier.classify("The alien landscape was breathtakingly strange, with flora and fauna unlike anything on Earth."))
-
-classifier.save_embeddings()
-
